@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package  net.ontopsolutions.computeraverage;
+
+option java_package = "net.ontopsolutions.computeraverage";
+option java_multiple_files = true;
+
+message ComputerAverageRequest {
+  int32 number=1;
+}
+
+message ComputerAverageResponse {
+  double average=1;
+}
+
+service ComputerAverage {
+  rpc average(stream ComputerAverageRequest) returns (ComputerAverageResponse){};
+}
